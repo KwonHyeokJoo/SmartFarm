@@ -1,0 +1,60 @@
+from flask import Flask, render_template
+
+mos = 0
+tmp1 = 0
+tmp2 = 0
+hum1 = 0
+hum2 = 0
+lux = 0
+
+app = Flask(__name__)
+
+@app.route('/tmp/<name>')
+def hello_tmp(name):
+	global tmp1
+	tmp1=name
+	return '현재온도 %s 도' % tmp1
+
+@app.route('/tmpUp')
+def tmpUp():
+	global tmp1
+	tmp1+=1
+	return '현재온도 %s도'% tmp1
+
+@app.route('/hum/<name>')
+def hello_hum(name):
+	return '현재습도  %s' % name
+
+@app.route('/lux/<name>')
+def hello_lux(name):
+	return '현재조도 %s lux' % name
+
+@app.route('/grd/<name>')
+def hello_grd(name):
+	return '현재토양 %s 정도' % name
+
+@app.route('/control/<name>')
+def hello_control(name):
+	return 'control %s' % tmp1
+
+@app.route('/')
+def home():
+	return render_template("home.html", mosH=mos,tmp1H=tmp1,tmp2H=tmp2,hum1H=hum1,hum2H=hum2,luxH=lux)
+
+@app.route('/getTH')
+def getTH():
+	return tmp1, hum1
+
+@app.route('/<mosIn>/<tmp1In>/<tmp2In>/<hum1In>/<hum2In>/<luxIn>')
+def home2(mosIn,tmp1In,tmp2In,hum1In,hum2In,luxIn):
+	global mos,tmp1,tmp2,hum1,hum2,lux
+	mos = mosIn
+	tmp1 = tmp1In
+	tmp2 = tmp2In
+	hum1 = hum1In
+	hum2 = hum2In
+	lux = luxIn
+	return render_template("change.html",mosH=mosIn,tmp1H=tmp1In,tmp2H=tmp2In,hum1H=hum1In,hum2H=hum2In,luxH=luxIn)
+
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port=80)
