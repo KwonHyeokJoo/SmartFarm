@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="30dp">
+
+        <TextView
+            android:id="@+id/tvCurF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="팬 스위치"
+            android:textSize="30dp" />
+
+        <Switch
+            android:id="@+id/fanSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:showText="true"
+            android:textOff="off"
+            android:textOn="on" />
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTargetF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="팬 속도 조절"
+        android:gravity="center"/>
+    <SeekBar
+        android:id="@+id/SBfanSpeed"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|right">
+        <Button
+            android:id="@+id/btnReturn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="종료" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+
+
+
+
+
+

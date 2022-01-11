@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.smartfarm">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SmartFarm">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity   android:name=".SettingTemActivity" android:label="온도 설정" android:exported="true"/>
+        <activity   android:name=".SettingHumActivity" android:label="습도 설정" android:exported="true"/>
+        <activity   android:name=".SettingFanActivity" android:label="팬 설정" android:exported="true"/>
+        <activity   android:name=".SettingHeatActivity" android:label="열풍기 설정"  android:exported="true"/>
+        <activity   android:name=".SettingWindowActivity" android:label="개폐기 설정" android:exported="true"/>
+    </application>
+
+</manifest>

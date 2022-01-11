@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="9">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_margin="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/borderline">
+
+            <TextView
+                android:id="@+id/tvLeftWindow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="좌측개폐기"
+                android:textSize="30dp"/>
+
+            <Switch
+                android:id="@+id/lwSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:showText="true"
+                android:textOff="off"
+                android:textOn="on" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_margin="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/borderline">
+
+            <TextView
+                android:id="@+id/tvRightWindow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="우측개폐기"
+                android:textSize="30dp" />
+            <Switch
+                android:id="@+id/rwSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:showText="true"
+                android:textOff="off"
+                android:textOn="on" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="bottom|right">
+        <Button
+            android:id="@+id/btnReturn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="종료" />
+    </LinearLayout>
+</LinearLayout>
